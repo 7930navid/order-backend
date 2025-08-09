@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.post('/send-order', async (req, res) => {
   const { name, email, phone, webname, type, details } = req.body;
 
-  if (!name || !email || !phone || !type || !details) {
+  if (!name || !email || !phone || !webname || !type || !details) {
     return res.status(400).json({ message: 'Please fill all required fields!' });
   }
 
@@ -23,7 +23,7 @@ app.post('/send-order', async (req, res) => {
     service: 'gmail',
     auth: {
       user: 'navidabid92@gmail.com',
-      pass: 'qgsqcmvbenratxpi',
+      pass: 'qgsqcmvbenratxpi', // Production e env file use korben
     },
   });
 
